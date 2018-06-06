@@ -37,7 +37,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    ##your code here
+    if logged_in?
+      redirect to '/account'
+    else 
+      redirect to '/failure'
   end
 
   get "/failure" do
